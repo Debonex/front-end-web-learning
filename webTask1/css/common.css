@@ -1,0 +1,55 @@
+html,
+body {
+    height: 100%;
+    background-color: rgb(38, 38, 38);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(51, 51, 51);
+}
+
+.box-row {
+    display: flex;
+    width: inherit;
+    margin: 14px 10px;
+    padding: 4px 5px;
+}
+
+.button-row {
+    justify-content: flex-end;
+    width: 80%;
+}
+
+.box-title {
+    flex: 0 0 auto;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.box-input {
+    background-color: rgb(34, 34, 34);
+    border-color: rgb(34, 34, 34);
+    border-radius: 5px;
+    font-size: 12px;
+    color: rgb(153, 153, 153);
+    padding: 8px 5px;
+}
+
+.box-button {
+    padding: 4px 5px;
+    background-color: rgb(172, 57, 109);
+    border-color: rgb(172, 57, 109);
+    border-width: 1px;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+}

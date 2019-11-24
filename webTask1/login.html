@@ -5,11 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+    <title>登陆</title>
 </head>
 
 <body>
-
+    <div class="login-main">
+        <div class="form-container">
+            <form class="login-box" action="index.html" method="POST">
+                <div class="box-row">
+                    <span class="box-title">登陆以继续</span>
+                </div>
+                <div class="box-row">
+                    <input class="box-input" placeholder="用户名/邮箱">
+                </div>
+                <div class="box-row">
+                    <input type="password" class="box-input" placeholder="密码">
+                </div>
+                <div class="box-row">
+                    <a class="login-box-forget" href="index.html">忘记密码</a>
+                </div>
+                <div class="box-row button-row">
+                    <button type="submit" class="box-button">登陆</button>
+                </div>
+            </form>
+        </div>
+        <div class="register-container">
+            <form class="register-box" action="register.html" method="POST">
+                <div class="box-row">
+                    <span class="box-title">没有账号？</span>
+                </div>
+                <div class="box-row register-detail">点击右下角的注册按钮成为EM的一员吧!</div>
+                <div class="box-row button-row">
+                    <button type="submit" class="box-button">注册</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
