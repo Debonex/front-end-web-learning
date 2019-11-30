@@ -82,11 +82,17 @@
 }
 
 .video-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     display: flex;
     justify-content: center;
     border-radius: 10px;
-    margin-top: 30px;
     width: fit-content;
-    padding: 20px 20px;
-    background-color: rgb(40, 40, 48);
+    height: fit-content;
+}
+
+.index-video {
+    width: 240px;
+    height: 220px;
 }
