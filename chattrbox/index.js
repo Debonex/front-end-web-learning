@@ -8,4 +8,4 @@ var server = http.createServer(function(req, res) {
     var filePath = extract(req.url);
     fh.readFile(filePath, res);
 });
-server.listen(8080);
+server.listen(3000);
