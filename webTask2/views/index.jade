@@ -1,0 +1,83 @@
+extends main
+block header
+  head
+    meta(charset='UTF-8')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    |     
+    link(rel='shortcut icon', href='images/favicon.ico')
+    |     
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css')
+    |     
+    link(rel='stylesheet', href='./css/common.css')
+    |     
+    link(rel='stylesheet', href='./css/index.css')
+    |     
+    title 主页
+    
+block content
+  .main-container
+    .index-title
+      .title-text 精选艺术家
+    |         
+    .index-main
+      .index-introduction
+        | 电子音乐在国际上一直是普罗大众所追逐的一种潮流趋势，由此催生出的各种电音节数不胜数。
+        br
+        |                 
+        br
+        |  下面是一些知名的电音制作人。
+      |             
+      .musician-list
+        .musician-item
+          .musician-image-wrapper
+            img.musician-image(src='images/musician-TobyFox.jfif', alt='')
+          |                     
+          a.musician-name(href='#') Toby Fox
+        |                 
+        .musician-item
+          .musician-image-wrapper
+            img.musician-image(src='images/musician-Sakuzyo.jfif', alt='')
+          |                     
+          a.musician-name(href='#') &#x524A;&#x9664;sakuzyo
+        |                 
+        .musician-item
+          .musician-image-wrapper
+            img.musician-image(src='images/musician-LenaRaine.jfif', alt='')
+          |                     
+          a.musician-name(href='#') Lena Raine
+        |                 
+        .musician-item
+          .musician-image-wrapper
+            img.musician-image(src='images/musician-Deorro.jfif', alt='')
+          |                     
+          a.musician-name(href='#') Deorro
+        |                 
+        .musician-item
+          .musician-image-wrapper
+            img.musician-image(src='images/musician-Tanchiky.jfif', alt='')
+          |                     
+          a.musician-name(href='#') Tanchiky
+        |                 
+        .musician-item
+          .musician-image-wrapper
+            img.musician-image(src='images/musician-MDK.jpg', alt='')
+          |                     
+          a.musician-name(href='#') MDK
+        |                 
+        .musician-item
+          .musician-image-wrapper
+            img.musician-image(src='images/musician-AlanWalker.jpg', alt='')
+          |                     
+          a.musician-name(href='#') Alan Walker
+        |                 
+        .musician-item
+          .musician-image-wrapper
+            img.musician-image(src='images/musician-SanHolo.jpg', alt='')
+          |                     
+          a.musician-name(href='#') San Holo
+      |             
+      .video-container
+        video.index-video(src='videos/MEGALOVANIA.mp4', controls='controls')
