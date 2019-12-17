@@ -1,33 +1,20 @@
 extends main
-block header
-  head
-    meta(charset='UTF-8')
-    |     
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    |     
-    meta(http-equiv='X-UA-Compatible', content='ie=edge')
-    |     
-    link(rel='shortcut icon', href='images/favicon.ico')
-    |     
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css')
-    |     
-    link(rel='stylesheet', href='css/common.css')
-    |     
+block links    
     link(rel='stylesheet', href='css/login.css')
-    |     
-    title 登陆
+    script(src="/javascripts/login.js")
+
 block content
     .login-main
       .form-container
-        form.login-box(action='index', method='POST')
+        form.login-box(action='/users/login', method='POST')
           .box-row
             span.box-title 登陆以继续
           |                 
           .box-row
-            input.box-input(placeholder='用户名/邮箱')
+            input.box-input(placeholder='用户名',name='username')
           |                 
           .box-row
-            input.box-input(type='password', placeholder='密码')
+            input.box-input(type='password', placeholder='密码',name='password')
           |                 
           .box-row
             a.login-box-forget(href='index') 忘记密码
@@ -36,11 +23,11 @@ block content
             button.box-button(type='submit') 登陆
       |         
       .register-container
-        form.register-box(action='register', method='POST')
+        div.register-box
           .box-row
             span.box-title 没有账号？
           |                 
           .box-row.register-detail 点击右下角的注册按钮成为EM的一员吧！
           |                 
           .box-row.button-row
-            button.box-button(type='submit') &#x6CE8;&#x518C;
+            button.box-button#register-button 注册

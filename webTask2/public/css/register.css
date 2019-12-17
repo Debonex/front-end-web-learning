@@ -6,3 +6,20 @@
     align-items: center;
     margin-top: 12%;
 }
+
+.success-container {
+    position: fixed;
+    top: 40%;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(172, 57, 109);
+    background-color: rgb(70, 70, 70);
+    width: 60%;
+    height: 150px;
+    text-align: center;
+    padding-top: 50px;
+    color: rgb(255, 204, 24);
+    font-size: 18px;
+    font-weight: bold;
+}

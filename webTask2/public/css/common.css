@@ -13,6 +13,18 @@ a {
     text-decoration: none;
 }
 
+.hidden {
+    display: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+input:focus {
+    outline: none;
+}
+
 video:focus {
     outline: none;
 }
@@ -76,13 +88,14 @@ video:focus {
 }
 
 .box-row {
-    display: flex;
+    /* display: flex; */
     width: inherit;
     margin: 14px 10px;
     padding: 4px 5px;
 }
 
 .button-row {
+    display: flex;
     justify-content: flex-end;
     width: 80%;
 }
@@ -100,6 +113,7 @@ video:focus {
     border-radius: 5px;
     font-size: 12px;
     color: rgb(153, 153, 153);
+    width: 88%;
     padding: 8px 5px;
 }
 
@@ -123,4 +137,17 @@ video:focus {
     color: white;
     font-size: 12px;
     font-weight: 600;
+}
+
+.input-fault {
+    border-color: rgb(172, 57, 109);
+}
+
+.input-note {
+    color: rgb(255, 204, 24);
+    margin-top: 5px;
+    margin-bottom: -14px;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: right;
 }
