@@ -70,14 +70,14 @@ window.onload = function() {
                 if (res.state == 0) {
                     var containerSucc = document.getElementsByClassName('success-container')[0];
                     removeClass(containerSucc, 'hidden');
-                    var time = 5;
+                    var time = 3;
                     setInterval(() => {
                         containerSucc.innerHTML = '注册成功！' + time + '秒后跳转到登录页面！';
                         time--;
                     }, 1000);
                     setTimeout(() => {
                         window.location.href = '/login';
-                    }, 5000);
+                    }, 3000);
                 } else if (res.state == 1 || res.state == 2) {
                     addClass(inputUsername, 'input-fault');
                     removeClass(noteUsername, 'hidden');

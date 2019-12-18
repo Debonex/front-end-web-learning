@@ -26,7 +26,7 @@ function checkLogin() {
             res = JSON.parse(res);
             if (res.state == 0) {
                 document.getElementById('navigator-item-right1').innerHTML = '<a href="#">' + res.username + '</a>';
-                document.getElementById('navigator-item-right2').innerHTML = '<a href="#">登出</a>';
+                document.getElementById('navigator-item-right2').innerHTML = '<a href="/users/logout">登出</a>';
             } else {
                 document.getElementById('navigator-item-right1').innerHTML = '<a href="/login">登陆</a>';
                 document.getElementById('navigator-item-right2').innerHTML = '<a href="/register">注册</a>';

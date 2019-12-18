@@ -65,4 +65,19 @@ router.get('/checklogin', function(req, res) {
     }
 });
 
+router.get('/logout', function(req, res) {
+    if (req.session.username) {
+        var username = req.session.username;
+        req.session.destroy((err) => {
+            if (err) {
+                res.send({ state: 1, message: '登出失败' });
+            } else {
+                res.redirect('/');
+            }
+        })
+    } else {
+        res.send({ state: 1, message: '登出失败' });
+    }
+})
+
 module.exports = router;
