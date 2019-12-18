@@ -61,7 +61,6 @@ window.onload = function() {
         httpRequest.onreadystatechange = function() {
             if (httpRequest.readyState == 4 && httpRequest.status == 200) { //验证请求是否发送成功
                 var res = httpRequest.responseText; //获取到服务端返回的数据
-                console.log('res: ' + res);
                 res = JSON.parse(res);
                 if (res.state == 0) {
                     var containerSucc = document.getElementsByClassName('success-container')[0];

@@ -35,12 +35,23 @@ router.post('/register', function(req, res) {
 
 /** login form post */
 router.post('/login', function(req, res) {
-    console.log(req.body);
     var user = {
         username: req.body.username,
         password: req.body.password
     }
-    res.send('login fail!');
+    db.isUsernameExits(req.body.username, function(num) {
+        if (num != 1) {
+            res.send({ state: 1, message: '用户名或密码错误' });
+        } else {
+            db.getUserByUsername(req.body.username, function(result) {
+                if (user.password !== result.password) {
+                    res.send({ state: 1, message: '用户名或密码错误' });
+                } else {
+                    res.send({ state: 0, message: '登陆成功' });
+                }
+            })
+        }
+    });
 })
 
 module.exports = router;

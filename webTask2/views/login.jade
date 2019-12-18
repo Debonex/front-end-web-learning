@@ -6,28 +6,25 @@ block links
 block content
     .login-main
       .form-container
-        form.login-box(action='/users/login', method='POST')
+        .login-box
           .box-row
-            span.box-title 登陆以继续
-          |                 
+            span.box-title 登陆以继续                 
           .box-row
-            input.box-input(placeholder='用户名',name='username')
-          |                 
+            input.box-input#input-username(placeholder='用户名')
+            .input-note.hidden#note-username             
           .box-row
-            input.box-input(type='password', placeholder='密码',name='password')
-          |                 
+            input.box-input#input-password(type='password', placeholder='密码')
+            .input-note.hidden#note-password           
           .box-row
-            a.login-box-forget(href='index') 忘记密码
-          |                 
+            a.login-box-forget(href='/register') 忘记密码               
           .box-row.button-row
-            button.box-button(type='submit') 登陆
-      |         
+            button.box-button#button-submit 登陆        
       .register-container
         div.register-box
           .box-row
-            span.box-title 没有账号？
-          |                 
-          .box-row.register-detail 点击右下角的注册按钮成为EM的一员吧！
-          |                 
+            span.box-title 没有账号？                
+          .box-row.register-detail 点击右下角的注册按钮成为EM的一员吧！                 
           .box-row.button-row
-            button.box-button#register-button 注册
+            button.box-button#button-register 注册
+      .success-container.hidden 登陆成功！即将跳转。
+      

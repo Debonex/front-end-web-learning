@@ -1,43 +1,36 @@
 const mysql = require('mysql');
+const config = require('../configure');
+const cryption = require('../cryption');
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    port: '3306',
-    database: 'webtask'
-});
+const connection = mysql.createConnection(config.database);
 
 connection.connect();
 
 var methods = {
     addUser(user) {
-        connection.query('insert into users (username,password) values (\'' + user.username + '\',\'' + user.password + '\')');
+        var password = cryption.aesEncrypt(user.password, config.aeskey);
+        var sql = 'insert into users (username,password) values (\'' + user.username + '\',\'' + password + '\')';
+        connection.query(sql);
     },
-    getUserByUsername(username) {
-        connection.query('select * from users where username=\'' + username + '\'', function(err, result) {
-            if (err) {
-                console.error(err.stack);
-            } else {
-                return result;
-            }
-        });
-    },
-    // async isUsernameExits(username) {
-    //     var sql = 'select count(*) as num from users where username=\'' + username + '\'';
-    //     var numer = await connection.query(sql);
-    //     console.log('last :' + numer);
-    //     return numer;
-    // }
-    isUsernameExits(username, callback) {
-        var sql = 'select count(*) as num from users where username=\'' + username + '\'';
-        var numer = 2;
+    getUserByUsername(username, callback) {
+        var sql = 'select * from users where username=\'' + username + '\'';
         connection.query(sql, function(err, result) {
             if (err) {
                 console.error(err.stack);
             } else {
-                numer = result[0].num;
-                callback(numer);
+                console.log(result);
+                result[0].password = cryption.aesDecrypt(result[0].password, config.aeskey);
+                callback(result[0]);
+            }
+        });
+    },
+    isUsernameExits(username, callback) {
+        var sql = 'select count(*) as num from users where username=\'' + username + '\'';
+        connection.query(sql, function(err, result) {
+            if (err) {
+                console.error(err.stack);
+            } else {
+                callback(result[0].num);
             }
         });
     }
