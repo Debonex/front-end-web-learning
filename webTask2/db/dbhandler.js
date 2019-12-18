@@ -18,7 +18,6 @@ var methods = {
             if (err) {
                 console.error(err.stack);
             } else {
-                console.log(result);
                 result[0].password = cryption.aesDecrypt(result[0].password, config.aeskey);
                 callback(result[0]);
             }

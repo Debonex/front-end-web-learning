@@ -1,5 +1,4 @@
 const crypto = require('crypto');
-const config = require('./configure');
 
 var cryption = {
     aesEncrypt(data, key) {

@@ -31,7 +31,7 @@ router.post('/register', function(req, res) {
         });
     }
 
-})
+});
 
 /** login form post */
 router.post('/login', function(req, res) {
@@ -47,11 +47,22 @@ router.post('/login', function(req, res) {
                 if (user.password !== result.password) {
                     res.send({ state: 1, message: '用户名或密码错误' });
                 } else {
+                    req.session.username = result.username;
+                    res.cookie('user', result);
                     res.send({ state: 0, message: '登陆成功' });
                 }
             })
         }
     });
-})
+});
+
+
+router.get('/checklogin', function(req, res) {
+    if (req.session.username) {
+        res.send({ state: 0, username: req.session.username });
+    } else {
+        res.send({ state: 1 });
+    }
+});
 
 module.exports = router;

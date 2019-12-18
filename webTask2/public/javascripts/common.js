@@ -13,3 +13,28 @@ function removeClass(elements, cName) {
         elements.className = elements.className.replace(new RegExp("(\\s|^)" + cName + "(\\s|$)"), " "); // replace方法是替换
     };
 };
+
+function checkLogin() {
+    var request = new XMLHttpRequest();
+    request.open('GET', '/users/checklogin', true);
+    request.setRequestHeader("Content-type", "application/json");
+    request.send();
+
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) { //验证请求是否发送成功
+            var res = request.responseText; //获取到服务端返回的数据
+            res = JSON.parse(res);
+            if (res.state == 0) {
+                document.getElementById('navigator-item-right1').innerHTML = '<a href="#">' + res.username + '</a>';
+                document.getElementById('navigator-item-right2').innerHTML = '<a href="#">登出</a>';
+            } else {
+                document.getElementById('navigator-item-right1').innerHTML = '<a href="/login">登陆</a>';
+                document.getElementById('navigator-item-right2').innerHTML = '<a href="/register">注册</a>';
+            }
+        }
+    }
+}
+
+window.onload = function() {
+    checkLogin();
+}

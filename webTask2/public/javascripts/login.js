@@ -1,6 +1,12 @@
+var saved;
+if (typeof window.onload == 'function') {
+    saved = window.onload;
+}
+
 window.onload = function() {
+    if (saved)
+        saved();
     document.getElementById('button-register').onclick = function() {
-        console.log('clickon');
         window.location.href = '/register';
     }
 

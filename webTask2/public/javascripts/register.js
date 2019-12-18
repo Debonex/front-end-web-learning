@@ -1,5 +1,11 @@
-window.onload = function() {
+var saved;
+if (typeof window.onload == 'function') {
+    saved = window.onload;
+}
 
+window.onload = function() {
+    if (saved)
+        saved();
     var inputUsername = document.getElementById('input-username');
     var inputPassword = document.getElementById('input-password');
     var inputPassword2 = document.getElementById('input-password2')
@@ -42,7 +48,6 @@ window.onload = function() {
             notePassword2.innerHTML = "两次密码输入不一致！";
             removeClass(notePassword2, 'hidden');
         }
-        console.log(username);
         return flag;
     };
 
@@ -64,7 +69,6 @@ window.onload = function() {
                 res = JSON.parse(res);
                 if (res.state == 0) {
                     var containerSucc = document.getElementsByClassName('success-container')[0];
-                    console.log(containerSucc);
                     removeClass(containerSucc, 'hidden');
                     var time = 5;
                     setInterval(() => {
