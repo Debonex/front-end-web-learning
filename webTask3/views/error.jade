@@ -1,0 +1,10 @@
+extends main
+
+block links
+  link(rel="stylesheet", href="/css/error.css")
+
+block content
+  .main-container
+    .error-main
+      h1= message
+      h2= error.status

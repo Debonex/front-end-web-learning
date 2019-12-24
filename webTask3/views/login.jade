@@ -1,0 +1,30 @@
+extends main
+block links    
+    link(rel='stylesheet', href='css/login.css')
+    script(src="/javascripts/login.js")
+
+block content
+    .login-main
+      .form-container
+        .login-box
+          .box-row
+            span.box-title 登陆以继续                 
+          .box-row
+            input.box-input#input-username(placeholder='用户名')
+            .input-note.hidden#note-username             
+          .box-row
+            input.box-input#input-password(type='password', placeholder='密码')
+            .input-note.hidden#note-password           
+          .box-row
+            a.login-box-forget(href='/register') 忘记密码               
+          .box-row.button-row
+            button.box-button#button-submit 登陆        
+      .register-container
+        div.register-box
+          .box-row
+            span.box-title 没有账号？                
+          .box-row.register-detail 点击右下角的注册按钮成为EM的一员吧！                 
+          .box-row.button-row
+            button.box-button#button-register 注册
+      .success-container.hidden 登陆成功！即将跳转。
+      

@@ -1,0 +1,24 @@
+extends main
+block links    
+    link(rel='stylesheet', href='css/register.css')
+    script(src="/javascripts/register.js")
+
+block content
+    .register-main
+        .form-container
+          div.register-box
+            .box-row
+              span.box-title 注册以继续                              
+            .box-row
+              input.box-input#input-username(placeholder='用户名')
+              .input-note.hidden#note-username           
+            .box-row
+              input.box-input#input-password(type='password', placeholder='密码') 
+              .input-note.hidden#note-password          
+            .box-row
+              input.box-input#input-password2(type='password', placeholder='确认密码')
+              .input-note.hidden#note-password2                  
+            .box-row.button-row
+              button.box-button#button-submit 注册
+        .success-container.hidden 注册成功！3秒后跳转到登录页面！
+        

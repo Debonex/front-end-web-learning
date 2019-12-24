@@ -1,5 +1,11 @@
 # others
 helloexpress/
+.vscode/
+package-lock.json
+
+#taskinfo
+*-[0-9].png
+说明.md
 
 # Build and Release Folders
 bin-debug/

@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')   
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')    
+        meta(http-equiv='X-UA-Compatible', content='ie=edge')    
+        link(rel='shortcut icon', href='images/favicon.ico')   
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css')   
+        link(rel='stylesheet', href='css/common.css')
+        script(src="/javascripts/common.js")
+        block links
+        title= title
+    body
+        .navigator
+            .navigator-left
+                .navigator-item
+                    img.navigator-logo(src='./images/logo.png')                
+                .navigator-item
+                    img.navigator-propagation(src='./images/propagation.png')                
+                .navigator-item
+                    a(href='index') 主页                
+                .navigator-item
+                    a(href='index') 艺术家               
+                .navigator-item
+                    a(href='index') 鉴赏             
+            .navigator-right#navigator-right-logout
+                .navigator-item
+                    a.navigator-icon(href='#')                 
+                .navigator-item#navigator-item-right1          
+                .navigator-item#navigator-item-right2
+    block content

@@ -1,0 +1,21 @@
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 68%;
+    margin-top: 20%;
+}
+
+h1,
+h2 {
+    color: rgb(172, 57, 109);
+}
