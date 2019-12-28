@@ -1,0 +1,29 @@
+var viewHeight = document.documentElement.clientHeight;
+
+function lazyload() {
+    var eles = document.querySelectorAll('img[data-src][lazyload]');
+    Array.prototype.forEach.call(eles, function(item, index) {
+        var rect;
+        if (item.dataset.src === "") {
+            return;
+        }
+        rect = item.getBoundingClientRect();
+        if (rect.bottom >= 0 && rect.top < viewHeight) {
+            ! function() {
+                var img = new Image();
+                img.src = item.dataset.url;
+                img.onload = function() {
+                    item.src = img.src;
+                }
+                item.removeAttribute("data-src");
+                item.removeAttribute("lazyload");
+            }();
+        }
+    })
+}
+
+
+window.onload = function() {
+    this.lazyload();
+    document.addEventListener("scroll", lazyload);
+}
